@@ -30,8 +30,12 @@ const map = require("../assets/icons/map.png");
 
 const question = require("../assets/icons/question.png");
 const exit = require("../assets/icons/exit.png");
+const clock = require("../assets/icons/clock.png");
+const location_pin = require("../assets/icons/location-pin.png");
 
 const iconMap = {
+    clock,
+    location_pin,
     back_arrow,
     home,
     line_graph,

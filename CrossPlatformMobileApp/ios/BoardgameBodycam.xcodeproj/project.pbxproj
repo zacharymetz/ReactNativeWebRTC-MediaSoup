@@ -7,12 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		00E356F31AD99517003FC87E /* CrossPlatformMobileAppTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E356F21AD99517003FC87E /* CrossPlatformMobileAppTests.m */; };
-		0C8F5246E80CA2CA6EA9F35E /* libPods-CrossPlatformMobileApp-CrossPlatformMobileAppTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9601DD3DA2A3E0FF8F2BDD4D /* libPods-CrossPlatformMobileApp-CrossPlatformMobileAppTests.a */; };
+		00E356F31AD99517003FC87E /* BoardgameBodycamTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E356F21AD99517003FC87E /* BoardgameBodycamTests.m */; };
+		0C8F5246E80CA2CA6EA9F35E /* libPods-BoardgameBodycam-BoardgameBodycamTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9601DD3DA2A3E0FF8F2BDD4D /* libPods-BoardgameBodycam-BoardgameBodycamTests.a */; };
 		13B07FBC1A68108700A75B9A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB01A68108700A75B9A /* AppDelegate.m */; };
 		13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
 		13B07FC11A68108700A75B9A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
-		1A11D16229D8A19EC2C37C86 /* libPods-CrossPlatformMobileApp.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 84B090AB026A977B67E20CF8 /* libPods-CrossPlatformMobileApp.a */; };
+		1A11D16229D8A19EC2C37C86 /* libPods-BoardgameBodycam.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 84B090AB026A977B67E20CF8 /* libPods-BoardgameBodycam.a */; };
 		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
 
@@ -22,28 +22,28 @@
 			containerPortal = 83CBB9F71A601CBA00E9B192 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = 13B07F861A680F5B00A75B9A;
-			remoteInfo = CrossPlatformMobileApp;
+			remoteInfo = BoardgameBodycam;
 		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		00E356EE1AD99517003FC87E /* CrossPlatformMobileAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CrossPlatformMobileAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		00E356EE1AD99517003FC87E /* BoardgameBodycamTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BoardgameBodycamTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		00E356F11AD99517003FC87E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		00E356F21AD99517003FC87E /* CrossPlatformMobileAppTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CrossPlatformMobileAppTests.m; sourceTree = "<group>"; };
-		1208FCD990A756F8387A40B5 /* Pods-CrossPlatformMobileApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CrossPlatformMobileApp.debug.xcconfig"; path = "Target Support Files/Pods-CrossPlatformMobileApp/Pods-CrossPlatformMobileApp.debug.xcconfig"; sourceTree = "<group>"; };
-		13B07F961A680F5B00A75B9A /* CrossPlatformMobileApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CrossPlatformMobileApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		13B07FAF1A68108700A75B9A /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = CrossPlatformMobileApp/AppDelegate.h; sourceTree = "<group>"; };
-		13B07FB01A68108700A75B9A /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AppDelegate.m; path = CrossPlatformMobileApp/AppDelegate.m; sourceTree = "<group>"; };
-		13B07FB51A68108700A75B9A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = CrossPlatformMobileApp/Images.xcassets; sourceTree = "<group>"; };
-		13B07FB61A68108700A75B9A /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = CrossPlatformMobileApp/Info.plist; sourceTree = "<group>"; };
-		13B07FB71A68108700A75B9A /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = CrossPlatformMobileApp/main.m; sourceTree = "<group>"; };
-		81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = CrossPlatformMobileApp/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		84B090AB026A977B67E20CF8 /* libPods-CrossPlatformMobileApp.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-CrossPlatformMobileApp.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		9601DD3DA2A3E0FF8F2BDD4D /* libPods-CrossPlatformMobileApp-CrossPlatformMobileAppTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-CrossPlatformMobileApp-CrossPlatformMobileAppTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		975F5856250CD2205E1ED2C1 /* Pods-CrossPlatformMobileApp-CrossPlatformMobileAppTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CrossPlatformMobileApp-CrossPlatformMobileAppTests.release.xcconfig"; path = "Target Support Files/Pods-CrossPlatformMobileApp-CrossPlatformMobileAppTests/Pods-CrossPlatformMobileApp-CrossPlatformMobileAppTests.release.xcconfig"; sourceTree = "<group>"; };
-		DC083B42BAED95AD9E5AC663 /* Pods-CrossPlatformMobileApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CrossPlatformMobileApp.release.xcconfig"; path = "Target Support Files/Pods-CrossPlatformMobileApp/Pods-CrossPlatformMobileApp.release.xcconfig"; sourceTree = "<group>"; };
+		00E356F21AD99517003FC87E /* BoardgameBodycamTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BoardgameBodycamTests.m; sourceTree = "<group>"; };
+		1208FCD990A756F8387A40B5 /* Pods-BoardgameBodycam.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BoardgameBodycam.debug.xcconfig"; path = "Target Support Files/Pods-BoardgameBodycam/Pods-BoardgameBodycam.debug.xcconfig"; sourceTree = "<group>"; };
+		13B07F961A680F5B00A75B9A /* BoardgameBodycam.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BoardgameBodycam.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		13B07FAF1A68108700A75B9A /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = BoardgameBodycam/AppDelegate.h; sourceTree = "<group>"; };
+		13B07FB01A68108700A75B9A /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AppDelegate.m; path = BoardgameBodycam/AppDelegate.m; sourceTree = "<group>"; };
+		13B07FB51A68108700A75B9A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = BoardgameBodycam/Images.xcassets; sourceTree = "<group>"; };
+		13B07FB61A68108700A75B9A /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = BoardgameBodycam/Info.plist; sourceTree = "<group>"; };
+		13B07FB71A68108700A75B9A /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = BoardgameBodycam/main.m; sourceTree = "<group>"; };
+		81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = BoardgameBodycam/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		84B090AB026A977B67E20CF8 /* libPods-BoardgameBodycam.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-BoardgameBodycam.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		9601DD3DA2A3E0FF8F2BDD4D /* libPods-BoardgameBodycam-BoardgameBodycamTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-BoardgameBodycam-BoardgameBodycamTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		975F5856250CD2205E1ED2C1 /* Pods-BoardgameBodycam-BoardgameBodycamTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BoardgameBodycam-BoardgameBodycamTests.release.xcconfig"; path = "Target Support Files/Pods-BoardgameBodycam-BoardgameBodycamTests/Pods-BoardgameBodycam-BoardgameBodycamTests.release.xcconfig"; sourceTree = "<group>"; };
+		DC083B42BAED95AD9E5AC663 /* Pods-BoardgameBodycam.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BoardgameBodycam.release.xcconfig"; path = "Target Support Files/Pods-BoardgameBodycam/Pods-BoardgameBodycam.release.xcconfig"; sourceTree = "<group>"; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
-		FD2BFF21FC66B4AF19AEB8BB /* Pods-CrossPlatformMobileApp-CrossPlatformMobileAppTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CrossPlatformMobileApp-CrossPlatformMobileAppTests.debug.xcconfig"; path = "Target Support Files/Pods-CrossPlatformMobileApp-CrossPlatformMobileAppTests/Pods-CrossPlatformMobileApp-CrossPlatformMobileAppTests.debug.xcconfig"; sourceTree = "<group>"; };
+		FD2BFF21FC66B4AF19AEB8BB /* Pods-BoardgameBodycam-BoardgameBodycamTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BoardgameBodycam-BoardgameBodycamTests.debug.xcconfig"; path = "Target Support Files/Pods-BoardgameBodycam-BoardgameBodycamTests/Pods-BoardgameBodycam-BoardgameBodycamTests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,7 +51,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0C8F5246E80CA2CA6EA9F35E /* libPods-CrossPlatformMobileApp-CrossPlatformMobileAppTests.a in Frameworks */,
+				0C8F5246E80CA2CA6EA9F35E /* libPods-BoardgameBodycam-BoardgameBodycamTests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -59,20 +59,20 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1A11D16229D8A19EC2C37C86 /* libPods-CrossPlatformMobileApp.a in Frameworks */,
+				1A11D16229D8A19EC2C37C86 /* libPods-BoardgameBodycam.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		00E356EF1AD99517003FC87E /* CrossPlatformMobileAppTests */ = {
+		00E356EF1AD99517003FC87E /* BoardgameBodycamTests */ = {
 			isa = PBXGroup;
 			children = (
-				00E356F21AD99517003FC87E /* CrossPlatformMobileAppTests.m */,
+				00E356F21AD99517003FC87E /* BoardgameBodycamTests.m */,
 				00E356F01AD99517003FC87E /* Supporting Files */,
 			);
-			path = CrossPlatformMobileAppTests;
+			path = BoardgameBodycamTests;
 			sourceTree = "<group>";
 		};
 		00E356F01AD99517003FC87E /* Supporting Files */ = {
@@ -83,7 +83,7 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		13B07FAE1A68108700A75B9A /* CrossPlatformMobileApp */ = {
+		13B07FAE1A68108700A75B9A /* BoardgameBodycam */ = {
 			isa = PBXGroup;
 			children = (
 				13B07FAF1A68108700A75B9A /* AppDelegate.h */,
@@ -93,15 +93,15 @@
 				81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */,
 				13B07FB71A68108700A75B9A /* main.m */,
 			);
-			name = CrossPlatformMobileApp;
+			name = BoardgameBodycam;
 			sourceTree = "<group>";
 		};
 		2D16E6871FA4F8E400B85C8A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
 				ED297162215061F000B7C4FE /* JavaScriptCore.framework */,
-				84B090AB026A977B67E20CF8 /* libPods-CrossPlatformMobileApp.a */,
-				9601DD3DA2A3E0FF8F2BDD4D /* libPods-CrossPlatformMobileApp-CrossPlatformMobileAppTests.a */,
+				84B090AB026A977B67E20CF8 /* libPods-BoardgameBodycam.a */,
+				9601DD3DA2A3E0FF8F2BDD4D /* libPods-BoardgameBodycam-BoardgameBodycamTests.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -109,10 +109,10 @@
 		5ED6F7F5928F968ABBC6EBFD /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				1208FCD990A756F8387A40B5 /* Pods-CrossPlatformMobileApp.debug.xcconfig */,
-				DC083B42BAED95AD9E5AC663 /* Pods-CrossPlatformMobileApp.release.xcconfig */,
-				FD2BFF21FC66B4AF19AEB8BB /* Pods-CrossPlatformMobileApp-CrossPlatformMobileAppTests.debug.xcconfig */,
-				975F5856250CD2205E1ED2C1 /* Pods-CrossPlatformMobileApp-CrossPlatformMobileAppTests.release.xcconfig */,
+				1208FCD990A756F8387A40B5 /* Pods-BoardgameBodycam.debug.xcconfig */,
+				DC083B42BAED95AD9E5AC663 /* Pods-BoardgameBodycam.release.xcconfig */,
+				FD2BFF21FC66B4AF19AEB8BB /* Pods-BoardgameBodycam-BoardgameBodycamTests.debug.xcconfig */,
+				975F5856250CD2205E1ED2C1 /* Pods-BoardgameBodycam-BoardgameBodycamTests.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -127,9 +127,9 @@
 		83CBB9F61A601CBA00E9B192 = {
 			isa = PBXGroup;
 			children = (
-				13B07FAE1A68108700A75B9A /* CrossPlatformMobileApp */,
+				13B07FAE1A68108700A75B9A /* BoardgameBodycam */,
 				832341AE1AAA6A7D00B99B32 /* Libraries */,
-				00E356EF1AD99517003FC87E /* CrossPlatformMobileAppTests */,
+				00E356EF1AD99517003FC87E /* BoardgameBodycamTests */,
 				83CBBA001A601CBA00E9B192 /* Products */,
 				2D16E6871FA4F8E400B85C8A /* Frameworks */,
 				5ED6F7F5928F968ABBC6EBFD /* Pods */,
@@ -142,8 +142,8 @@
 		83CBBA001A601CBA00E9B192 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				13B07F961A680F5B00A75B9A /* CrossPlatformMobileApp.app */,
-				00E356EE1AD99517003FC87E /* CrossPlatformMobileAppTests.xctest */,
+				13B07F961A680F5B00A75B9A /* BoardgameBodycam.app */,
+				00E356EE1AD99517003FC87E /* BoardgameBodycamTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -151,9 +151,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		00E356ED1AD99517003FC87E /* CrossPlatformMobileAppTests */ = {
+		00E356ED1AD99517003FC87E /* BoardgameBodycamTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 00E357021AD99517003FC87E /* Build configuration list for PBXNativeTarget "CrossPlatformMobileAppTests" */;
+			buildConfigurationList = 00E357021AD99517003FC87E /* Build configuration list for PBXNativeTarget "BoardgameBodycamTests" */;
 			buildPhases = (
 				82BBAF3D72DB0800DD501E4A /* [CP] Check Pods Manifest.lock */,
 				00E356EA1AD99517003FC87E /* Sources */,
@@ -167,14 +167,14 @@
 			dependencies = (
 				00E356F51AD99517003FC87E /* PBXTargetDependency */,
 			);
-			name = CrossPlatformMobileAppTests;
-			productName = CrossPlatformMobileAppTests;
-			productReference = 00E356EE1AD99517003FC87E /* CrossPlatformMobileAppTests.xctest */;
+			name = BoardgameBodycamTests;
+			productName = BoardgameBodycamTests;
+			productReference = 00E356EE1AD99517003FC87E /* BoardgameBodycamTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		13B07F861A680F5B00A75B9A /* CrossPlatformMobileApp */ = {
+		13B07F861A680F5B00A75B9A /* BoardgameBodycam */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 13B07F931A680F5B00A75B9A /* Build configuration list for PBXNativeTarget "CrossPlatformMobileApp" */;
+			buildConfigurationList = 13B07F931A680F5B00A75B9A /* Build configuration list for PBXNativeTarget "BoardgameBodycam" */;
 			buildPhases = (
 				2AE419F4935D9E0D9906B4E3 /* [CP] Check Pods Manifest.lock */,
 				FD10A7F022414F080027D42C /* Start Packager */,
@@ -189,9 +189,9 @@
 			);
 			dependencies = (
 			);
-			name = CrossPlatformMobileApp;
-			productName = CrossPlatformMobileApp;
-			productReference = 13B07F961A680F5B00A75B9A /* CrossPlatformMobileApp.app */;
+			name = BoardgameBodycam;
+			productName = BoardgameBodycam;
+			productReference = 13B07F961A680F5B00A75B9A /* BoardgameBodycam.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -211,7 +211,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 83CBB9FA1A601CBA00E9B192 /* Build configuration list for PBXProject "CrossPlatformMobileApp" */;
+			buildConfigurationList = 83CBB9FA1A601CBA00E9B192 /* Build configuration list for PBXProject "BoardgameBodycam" */;
 			compatibilityVersion = "Xcode 12.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -224,8 +224,8 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				13B07F861A680F5B00A75B9A /* CrossPlatformMobileApp */,
-				00E356ED1AD99517003FC87E /* CrossPlatformMobileAppTests */,
+				13B07F861A680F5B00A75B9A /* BoardgameBodycam */,
+				00E356ED1AD99517003FC87E /* BoardgameBodycamTests */,
 			);
 		};
 /* End PBXProject section */
@@ -270,15 +270,15 @@
 			files = (
 			);
 			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-CrossPlatformMobileApp/Pods-CrossPlatformMobileApp-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-BoardgameBodycam/Pods-BoardgameBodycam-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-CrossPlatformMobileApp/Pods-CrossPlatformMobileApp-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-BoardgameBodycam/Pods-BoardgameBodycam-frameworks-${CONFIGURATION}-output-files.xcfilelist",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-CrossPlatformMobileApp/Pods-CrossPlatformMobileApp-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-BoardgameBodycam/Pods-BoardgameBodycam-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		0762489B3FBAFE9C3C2E35AB /* [CP] Copy Pods Resources */ = {
@@ -287,15 +287,15 @@
 			files = (
 			);
 			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-CrossPlatformMobileApp/Pods-CrossPlatformMobileApp-resources-${CONFIGURATION}-input-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-BoardgameBodycam/Pods-BoardgameBodycam-resources-${CONFIGURATION}-input-files.xcfilelist",
 			);
 			name = "[CP] Copy Pods Resources";
 			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-CrossPlatformMobileApp/Pods-CrossPlatformMobileApp-resources-${CONFIGURATION}-output-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-BoardgameBodycam/Pods-BoardgameBodycam-resources-${CONFIGURATION}-output-files.xcfilelist",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-CrossPlatformMobileApp/Pods-CrossPlatformMobileApp-resources.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-BoardgameBodycam/Pods-BoardgameBodycam-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		2AE419F4935D9E0D9906B4E3 /* [CP] Check Pods Manifest.lock */ = {
@@ -313,7 +313,7 @@
 			outputFileListPaths = (
 			);
 			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-CrossPlatformMobileApp-checkManifestLockResult.txt",
+				"$(DERIVED_FILE_DIR)/Pods-BoardgameBodycam-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -335,7 +335,7 @@
 			outputFileListPaths = (
 			);
 			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-CrossPlatformMobileApp-CrossPlatformMobileAppTests-checkManifestLockResult.txt",
+				"$(DERIVED_FILE_DIR)/Pods-BoardgameBodycam-BoardgameBodycamTests-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -348,15 +348,15 @@
 			files = (
 			);
 			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-CrossPlatformMobileApp-CrossPlatformMobileAppTests/Pods-CrossPlatformMobileApp-CrossPlatformMobileAppTests-resources-${CONFIGURATION}-input-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-BoardgameBodycam-BoardgameBodycamTests/Pods-BoardgameBodycam-BoardgameBodycamTests-resources-${CONFIGURATION}-input-files.xcfilelist",
 			);
 			name = "[CP] Copy Pods Resources";
 			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-CrossPlatformMobileApp-CrossPlatformMobileAppTests/Pods-CrossPlatformMobileApp-CrossPlatformMobileAppTests-resources-${CONFIGURATION}-output-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-BoardgameBodycam-BoardgameBodycamTests/Pods-BoardgameBodycam-BoardgameBodycamTests-resources-${CONFIGURATION}-output-files.xcfilelist",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-CrossPlatformMobileApp-CrossPlatformMobileAppTests/Pods-CrossPlatformMobileApp-CrossPlatformMobileAppTests-resources.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-BoardgameBodycam-BoardgameBodycamTests/Pods-BoardgameBodycam-BoardgameBodycamTests-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		EF1E8575555BC7CFC61AC5A5 /* [CP] Embed Pods Frameworks */ = {
@@ -365,15 +365,15 @@
 			files = (
 			);
 			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-CrossPlatformMobileApp-CrossPlatformMobileAppTests/Pods-CrossPlatformMobileApp-CrossPlatformMobileAppTests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-BoardgameBodycam-BoardgameBodycamTests/Pods-BoardgameBodycam-BoardgameBodycamTests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-CrossPlatformMobileApp-CrossPlatformMobileAppTests/Pods-CrossPlatformMobileApp-CrossPlatformMobileAppTests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-BoardgameBodycam-BoardgameBodycamTests/Pods-BoardgameBodycam-BoardgameBodycamTests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-CrossPlatformMobileApp-CrossPlatformMobileAppTests/Pods-CrossPlatformMobileApp-CrossPlatformMobileAppTests-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-BoardgameBodycam-BoardgameBodycamTests/Pods-BoardgameBodycam-BoardgameBodycamTests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		FD10A7F022414F080027D42C /* Start Packager */ = {
@@ -402,7 +402,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				00E356F31AD99517003FC87E /* CrossPlatformMobileAppTests.m in Sources */,
+				00E356F31AD99517003FC87E /* BoardgameBodycamTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -420,7 +420,7 @@
 /* Begin PBXTargetDependency section */
 		00E356F51AD99517003FC87E /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 13B07F861A680F5B00A75B9A /* CrossPlatformMobileApp */;
+			target = 13B07F861A680F5B00A75B9A /* BoardgameBodycam */;
 			targetProxy = 00E356F41AD99517003FC87E /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -428,15 +428,15 @@
 /* Begin XCBuildConfiguration section */
 		00E356F61AD99517003FC87E /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = FD2BFF21FC66B4AF19AEB8BB /* Pods-CrossPlatformMobileApp-CrossPlatformMobileAppTests.debug.xcconfig */;
+			baseConfigurationReference = FD2BFF21FC66B4AF19AEB8BB /* Pods-BoardgameBodycam-BoardgameBodycamTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
 					"$(inherited)",
 				);
-				INFOPLIST_FILE = CrossPlatformMobileAppTests/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				INFOPLIST_FILE = BoardgameBodycamTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -449,18 +449,18 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/CrossPlatformMobileApp.app/CrossPlatformMobileApp";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/BoardgameBodycam.app/BoardgameBodycam";
 			};
 			name = Debug;
 		};
 		00E356F71AD99517003FC87E /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 975F5856250CD2205E1ED2C1 /* Pods-CrossPlatformMobileApp-CrossPlatformMobileAppTests.release.xcconfig */;
+			baseConfigurationReference = 975F5856250CD2205E1ED2C1 /* Pods-BoardgameBodycam-BoardgameBodycamTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				COPY_PHASE_STRIP = NO;
-				INFOPLIST_FILE = CrossPlatformMobileAppTests/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				INFOPLIST_FILE = BoardgameBodycamTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -473,20 +473,20 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/CrossPlatformMobileApp.app/CrossPlatformMobileApp";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/BoardgameBodycam.app/BoardgameBodycam";
 			};
 			name = Release;
 		};
 		13B07F941A680F5B00A75B9A /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 1208FCD990A756F8387A40B5 /* Pods-CrossPlatformMobileApp.debug.xcconfig */;
+			baseConfigurationReference = 1208FCD990A756F8387A40B5 /* Pods-BoardgameBodycam.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = SJ3LY8G583;
 				ENABLE_BITCODE = NO;
-				INFOPLIST_FILE = CrossPlatformMobileApp/Info.plist;
+				INFOPLIST_FILE = BoardgameBodycam/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -497,7 +497,7 @@
 					"-lc++",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
-				PRODUCT_NAME = CrossPlatformMobileApp;
+				PRODUCT_NAME = BoardgameBodycam;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				VERSIONING_SYSTEM = "apple-generic";
@@ -506,13 +506,14 @@
 		};
 		13B07F951A680F5B00A75B9A /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = DC083B42BAED95AD9E5AC663 /* Pods-CrossPlatformMobileApp.release.xcconfig */;
+			baseConfigurationReference = DC083B42BAED95AD9E5AC663 /* Pods-BoardgameBodycam.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = SJ3LY8G583;
-				INFOPLIST_FILE = CrossPlatformMobileApp/Info.plist;
+				ENABLE_BITCODE = NO;
+				INFOPLIST_FILE = BoardgameBodycam/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -523,7 +524,7 @@
 					"-lc++",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
-				PRODUCT_NAME = CrossPlatformMobileApp;
+				PRODUCT_NAME = BoardgameBodycam;
 				SWIFT_VERSION = 5.0;
 				VERSIONING_SYSTEM = "apple-generic";
 			};
@@ -578,7 +579,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					/usr/lib/swift,
 					"$(inherited)",
@@ -636,7 +637,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					/usr/lib/swift,
 					"$(inherited)",
@@ -655,7 +656,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		00E357021AD99517003FC87E /* Build configuration list for PBXNativeTarget "CrossPlatformMobileAppTests" */ = {
+		00E357021AD99517003FC87E /* Build configuration list for PBXNativeTarget "BoardgameBodycamTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				00E356F61AD99517003FC87E /* Debug */,
@@ -664,7 +665,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		13B07F931A680F5B00A75B9A /* Build configuration list for PBXNativeTarget "CrossPlatformMobileApp" */ = {
+		13B07F931A680F5B00A75B9A /* Build configuration list for PBXNativeTarget "BoardgameBodycam" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				13B07F941A680F5B00A75B9A /* Debug */,
@@ -673,7 +674,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		83CBB9FA1A601CBA00E9B192 /* Build configuration list for PBXProject "CrossPlatformMobileApp" */ = {
+		83CBB9FA1A601CBA00E9B192 /* Build configuration list for PBXProject "BoardgameBodycam" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				83CBBA201A601CBA00E9B192 /* Debug */,

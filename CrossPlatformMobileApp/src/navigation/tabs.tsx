@@ -12,14 +12,12 @@ import {
   BottomTabBar,
 } from '@react-navigation/bottom-tabs';
 
-import Home from '../screens/MapScreen';
+import MapScreen from '../screens/MapScreen';
 import Progress from '../screens/CreateEventScreen';
-import Facts from '../screens/facts';
-import Account from '../screens/account';
-import {COLORS, FONTS, icons} from '../constants';
+import Account from '../screens/MyProfileScreen';
+import {COLORS, icons} from '../constants';
 import {uiText} from '../constants';
 import LinearGradient from 'react-native-linear-gradient';
-import comboSessionLandingView from '../screens/comboSessionLandingView';
 
 const Tab = createBottomTabNavigator();
 
@@ -40,8 +38,8 @@ const Tabs = () => {
         },
       }}>
       <Tab.Screen
-        name={uiText.menuLabels.home}
-        component={Home}
+        name={"MapScreen"}
+        component={MapScreen}
         options={{
           tabBarIcon: ({focused}: {focused: boolean}) => (
             <RegularNavItem

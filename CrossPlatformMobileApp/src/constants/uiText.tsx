@@ -1,5 +1,5 @@
 const menuLabels = {
-  home: 'Home',
+  home: 'MapScreen',
   progress: 'Comunity',
   facts: 'Fact Library',
   account: 'Account',

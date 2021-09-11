@@ -9,12 +9,34 @@ import {
     Image,
     ImageBackground
 } from 'react-native';
+import { debounce } from "lodash";
+import Geocoder from 'react-native-geocoding';
+import DateTimePickerModal from "react-native-modal-datetime-picker";
+
 import { COLORS, SIZES, dummyData, FONTS, icons, images } from '../constants';
 import {Picker} from '@react-native-picker/picker';
 import { TextInput } from 'react-native-gesture-handler';
 import { LargeButton } from '../components/Buttons';
+Geocoder.init("AIzaSyA9HGhJ6izCYNeAMXHZAPei-spDym9uW-Q");
+
 const Facts = ({  }) => {
- 
+
+    // location input stuff 
+    const [possibleLocations,setPossibleLocations]= useState([]);
+    const [possibleLocationsInputValue,setPossibleLocationsInputValue]= useState("");
+    const updateEventList = (text:string) =>{
+        setPossibleLocationsInputValue(text)
+        
+        debounce(()=>{
+            console.log(text)
+            Geocoder.from(text).then(json=>{setPossibleLocations(json.results);console.log(json.results)})
+        },1000)()
+        
+    }
+
+    // time input stuff 
+    const [timeModalOpen,setTimeModalOpen]= useState(false);
+    const [timeInputValue,setTimeInputValue]= useState("");
         
      
 
@@ -95,11 +117,26 @@ const Facts = ({  }) => {
                         Event Location
                     </Text>
                     <TextInput
+                    onChangeText={updateEventList}
                     style={styles.input}
                     placeholder={"Pub Crawl"}
+                    value={possibleLocationsInputValue}
                     />
                     
                 </View>
+                {/* list the possible locations is could be at  */}
+                {possibleLocations.map(x=>{
+                    return <TouchableOpacity
+                        onPress={()=>{
+                            setPossibleLocationsInputValue(x.formatted_address)
+                            setPossibleLocations([])
+                        }}
+                    >
+                        <Text>
+                            {x.formatted_address}
+                        </Text>
+                    </TouchableOpacity>
+                })}
 
 
                 <View 
@@ -115,6 +152,7 @@ const Facts = ({  }) => {
                     />
                     
                 </View>
+                
 
                 <View 
                     style={styles.inputGroup}
@@ -124,12 +162,22 @@ const Facts = ({  }) => {
                     </Text>
                     <TextInput
                     style={styles.input}
+                    onPressIn={()=>setTimeModalOpen(true)}
                     placeholder={"Pub Crawl"}
                     keyboardType={'decimal-pad'}
+                    value={timeInputValue.toString()}
                     />
                     
                 </View>
-
+                <DateTimePickerModal
+        isVisible={timeModalOpen}
+        mode="datetime"
+        onConfirm={(date)=>{
+            setTimeInputValue(date)
+            setTimeModalOpen(false)
+        }}
+        onCancel={()=>setTimeModalOpen(false)}
+      />
 
                 <View 
                     style={styles.inputGroup}

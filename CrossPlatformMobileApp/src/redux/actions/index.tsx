@@ -1,10 +1,14 @@
 import {fetchMissionFeed} from './missionFeedActions';
-import {fetchHealthCheck} from './healthCheckActions'
+import {initAppConnection} from './healthCheckActions';
+import {fetchEvents} from './eventFetchActions';
+import {loadEvent} from './loadEventAction';
 import {postLoginRequest,postTokenValidatorRequest,postLogoutRequest} from './authenticationActions'
 export {
     fetchMissionFeed,
-    fetchHealthCheck,
+    initAppConnection,
     postLoginRequest,
     postTokenValidatorRequest,
-    postLogoutRequest
+    postLogoutRequest,
+    fetchEvents,
+    loadEvent
 }

@@ -1,10 +1,12 @@
 import { combineReducers } from "redux";
 
-import missionFeedReducer from "./missionFeedReducer";
+import EventReducer from "./eventFetchReducer";
 import HealthCheckReducer from "./healthCheckReducer";
 import UserAuthenticationReducer from "./authenticationReducer";
+import loadEventReducer from "./loadEventReducer";
 export default combineReducers({
-    missionFeed:missionFeedReducer,
+    missions:EventReducer,
+    eventReducer:loadEventReducer,
     healthCheck:HealthCheckReducer,
     userAuth:UserAuthenticationReducer
 });

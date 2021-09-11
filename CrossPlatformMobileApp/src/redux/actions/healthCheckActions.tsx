@@ -22,17 +22,16 @@ export const getHealthCheckSuccess = () => ({
     type: HEALTH_CHECK_SUCCESS
 }) 
 
-
-export const fetchHealthCheck = (checkAuthAfterRequest=false):ThunkAction<void, RootState, unknown, AnyAction> => async dispatch =>  {
+// health check does the inital server thing and 
+export const initAppConnection = (checkAuthAfterRequest=false):ThunkAction<void, RootState, unknown, AnyAction> => async (dispatch,getState) =>  {
     console.log("ASDASDSAD",API_URL+v0.healthCheck)
+    const state = getState();
+    console.log({states : state})
     dispatch(getHealthCheckStared())
     try{
-        let missionFeedData = 
-            await axios.get( API_URL+v0.healthCheck ,{
-
-            });
-
-        console.log(missionFeedData)
+        const healthCheckResponse = axios.get( API_URL+v0.healthCheck ,{});
+ 
+        console.log(await healthCheckResponse)
         dispatch(getHealthCheckSuccess())
 
         // now that we are connected lets do the token thing 

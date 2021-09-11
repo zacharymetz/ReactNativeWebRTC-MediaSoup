@@ -1,9 +1,9 @@
 require_relative '../node_modules/react-native/scripts/react_native_pods'
 require_relative '../node_modules/@react-native-community/cli-platform-ios/native_modules'
 
-platform :ios, '10.0'
+platform :ios, '11.2'
 
-target 'CrossPlatformMobileApp' do
+target 'BoardgameBodycam' do
   config = use_native_modules!
 
   use_react_native!(
@@ -14,7 +14,7 @@ target 'CrossPlatformMobileApp' do
 
   pod 'ReactNativeART', :path => '../node_modules/@react-native-community/art'
 
-  target 'CrossPlatformMobileAppTests' do
+  target 'BoardgameBodycamTests' do
     inherit! :complete
     # Pods for testing
   end

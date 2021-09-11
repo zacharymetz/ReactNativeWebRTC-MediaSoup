@@ -19,22 +19,23 @@ import LandingScreen from '../screens/LandingScreen';
 import LoginScreen from '../screens/LoginScreen';
 import SignupScreen from '../screens/SignupScreen';
 
-// additional screens out side the davication thing 
-import MissionView from '../screens/MissionView'
-import ChallengeView from '../screens/ChallengeView';
-import MissionCompletedView from '../screens/MissionCompletedView';
-import ComboSessionLandingView from '../screens/comboSessionLandingView';
 
-import EventDetailsScreen from '../screens/EventDetailsScreen'
+import EventDetailsScreen from '../screens/EventDetailsScreen';
+import ViewProfileScreen from '../screens/ViewProfileScreen';
+
 import { Provider } from 'react-redux'
 import store from '../redux/store'
 
-
+/*
+  
+*/
 export type RootStackParamList = {
   ChallengeView : { challengeID :number },
   MissionView : { missionID: number},
   MissionCompletedView : { missionID: number},
-  EventDetailsScreen : {eventID:number}
+  EventDetailsScreen : { eventID:number },
+  ViewProfileScreen : { profileID:number },
+  LandingScreen : {}
 }
 
 const Stack = createStackNavigator();
@@ -73,33 +74,18 @@ const App = () => {
           component={EventDetailsScreen}
         />
 
+        <Stack.Screen
+          name="ViewProfileScreen"
+          component={ViewProfileScreen}
+        />
+
          
         <Stack.Screen
           name="Home"
           component={Tabs}
         />
 
-        {/* Mission Specific Screens */}
-        <Stack.Screen
-          name="MissionView"
-          component={MissionView}
-        />
-        <Stack.Screen
-          name="MissionCompletedView"
-          component={MissionCompletedView}
-        />
-
-        {/* Challenge Specifc Screens */}
-        <Stack.Screen
-          name="ChallengeView"
-          component={ChallengeView}
-        />
-
-        {/* Combo Speciic Screen */}
-        <Stack.Screen
-          name="ComboSessionLandingView"
-          component={ComboSessionLandingView}
-        />
+         
       </Stack.Navigator>
     </NavigationContainer> 
     </Provider>

@@ -156,7 +156,8 @@ export const MissionListItem:FC<MissionListItemProps> = ({ id, platform, title, 
         </TouchableOpacity>
       );
 }
-export const MissionListItemShimmerLoader:FC = ({id})=>{
+
+export const MissionListItemShimmerLoader:FC<{id:any}>= ({id})=>{
     return <View
     style={{
       flexDirection: 'column',

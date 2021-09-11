@@ -1,35 +1,48 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { useEffect } from 'react';
-import AsyncStorage from '@react-native-async-storage/async-storage';
 import {
     StyleSheet,
     View,
-    ScrollView,
     Text,
     ActivityIndicator,
     TouchableOpacity,
-    Dimensions,
     Image,
-    ImageBackground,
     Platform
 } from 'react-native';
 import { connect } from 'react-redux';
-import { COLORS, SIZES, dummyData, FONTS, icons, images } from '../constants';
-import { fetchHealthCheck,postTokenValidatorRequest } from '../redux/actions';
-import { useNavigation } from '@react-navigation/native';
+import { COLORS, SIZES, FONTS, icons } from '../constants';
+import { initAppConnection,postTokenValidatorRequest } from '../redux/actions';
+import { RouteProp, useNavigation } from '@react-navigation/native';
 import { LargeButton } from '../components/Buttons';
+import { StackNavigationProp } from '@react-navigation/stack';
+import { RootStackParamList } from '../app/App';
+import { FC } from 'react';
 /*
 The screen will ping the server to see if there is a connection 
 then check the authentication statuts and verify it with the server 
 */
-const LandingScreen = ({ loading, fetchHealthCheck,healthCheckPassed,authLoading,loggedIn, navigation}) => {
+type LandingScreenProps = {
+    navigation:StackNavigationProp<RootStackParamList>;
+    route:RouteProp<RootStackParamList,'LandingScreen'>;
+    loading:Boolean;
+    healthCheckPassed:Boolean;
+    initAppConnection:Function;
+    authLoading:Boolean;
+    loggedIn:Boolean;
+}
+  
+const LandingScreen:FC<LandingScreenProps> = ({ loading, initAppConnection ,healthCheckPassed,authLoading,loggedIn, navigation}) => {
     // use this once to get the heathcheck and mak sure we check the stored auth as well
-    useEffect(()=>{fetchHealthCheck(true)},[]); 
-    
+    useEffect(()=>{initAppConnection(true)},[]); 
+    useEffect( ()=>{
+        (async ()=>{
+        })()
+        
+    },[]);
     if(loading || authLoading){
         console.log({loading,authLoading})
         return <View style={{ justifyContent : "center", alignItems : "center", height : "100%", width : "100%"}} >
-        <Text>Still loading :(</Text>
+        <ActivityIndicator size="large" />
     </View>
     }else{
         // now the loading is done check to see if we are connect to the server,
@@ -181,7 +194,7 @@ function mapStateToProps(state:any) {
     const { healthCheck, userAuth } = state;
     return { ...healthCheck, loggedIn : userAuth.loggedIn, authLoading : userAuth.loading }
 }
-export default connect(mapStateToProps, { fetchHealthCheck,postTokenValidatorRequest })(LandingScreen);
+export default connect(mapStateToProps, { initAppConnection,postTokenValidatorRequest })(LandingScreen);
   
   
  

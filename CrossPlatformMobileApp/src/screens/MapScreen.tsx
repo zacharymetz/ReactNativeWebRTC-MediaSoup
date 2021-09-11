@@ -14,47 +14,180 @@ import {
   Dimensions,
 } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
-import { connect } from 'react-redux'
-import { AnyAction } from 'redux';
+import { connect } from 'react-redux' 
+import { UrlTile } from 'react-native-maps';
 import { RootStackParamList } from '../app/App';
 import {COLORS, SIZES, FONTS, icons, images, uiText, dummyData} from '../constants'; 
 import MissionFeedList from '../components/MissionFeed';
-import {postLogoutRequest} from '../redux/actions';
+import {fetchEvents} from '../redux/actions';
 import MapView, { Marker, PROVIDER_GOOGLE } from 'react-native-maps';
 import { useState } from 'react';
-type HomeScreenProps = {
+import { Socket } from 'socket.io-client';
+import { Device } from 'mediasoup-client';
+import { RtpCapabilities } from 'mediasoup-client/lib/types';
+import {
+    RTCPeerConnection,
+    RTCIceCandidate,
+    RTCSessionDescription,
+    RTCView,
+    MediaStream,
+    MediaStreamTrack,
+    mediaDevices,
+    registerGlobals
+  } from 'react-native-webrtc';
+type MapScreenScreenProps = {
   navigation:StackNavigationProp<RootStackParamList>;
-  postLogoutRequest:Function
+  fetchEvents:Function,
+  events:any[],
+  authToken:string
 }
 
-const Home: FC<HomeScreenProps> = ({ navigation,postLogoutRequest} ) => { 
+const MapScreen: FC<MapScreenScreenProps> = ({ navigation,fetchEvents, events,authToken} ) => { 
     
-    const [showEvents, setShowEvents] = useState(false)
+    const [stream, setStream] = useState(null)
+    useEffect(()=>{fetchEvents()},[])
+    useEffect(()=>{
+        registerGlobals();
+        const io = require("socket.io-client");
 
+        const socket = io("https://192.168.1.68:3000",{
+            extraHeaders: {
+              Authorization: "Bearer " + authToken
+            }
+          });
+        // this is a helper to make my life easier 
+        socket.request = socketPromise(socket);
+        
+        let producer;
+        socket.request('getRouterRtpCapabilities').then(async (routerRtpCapabilities:RtpCapabilities)=>{
+            try{
+                let device:Device = new Device();
+                console.log(1)
+                await device.load({ routerRtpCapabilities });
+                console.log(2)
+                console.log(device)
+                // okay down here we should be connected to the server and have something 
+
+                // so lets start producing 
+                const data = await socket.request('createProducerTransport', {
+                    forceTcp: false,
+                    rtpCapabilities: device.rtpCapabilities,
+                });
+                console.log(data)
+                const transport = device.createSendTransport(data);
+                console.log({transport})
+
+                // on transport connect 
+                transport.on('connect', async ({ dtlsParameters }, callback, errback) => {
+                    console.log("transport has connected lmao",{dtlsParameters})
+                    
+                    socket.request('connectProducerTransport', { dtlsParameters,transport : {id :transport.id }  })
+                      .then(callback)
+                      .catch(errback);
+                    console.log("sent request to connectProducerTransport")
+                  });
+
+
+                // on produce 
+                transport.on('produce', async ({ kind, rtpParameters }, callback, errback) => {
+                    console.log("the server wants me to start producing media now")
+                    try {
+                      const { id } = await socket.request('produce', {
+                        transport:{id: transport.id },
+                        kind,
+                        rtpParameters,
+                      });
+                      callback({ id });
+                    } catch (err) {
+                      errback(err);
+                    }
+                  });
+
+                // on connection state change
+                transport.on('connectionstatechange', (state) => {
+                    console.log("the transport state has changed",state)
+                    switch (state) {
+                      case 'connecting':
+                        console.log('connecting')
+                      break;
+                
+                      case 'connected':
+                        //document.querySelector('#local_video').srcObject = stream;
+                        console.log('connected')
+                      break;
+                
+                      case 'failed':
+                        transport.close();
+                        $txtPublish.innerHTML = 'failed';
+                        $fsPublish.disabled = false;
+                        $fsSubscribe.disabled = true;
+                      break;
+                
+                      default: break;
+                    }
+                  });
+
+                  console.log("device can produce video",device.canProduce('video'))
+                 
+                  mediaDevices.enumerateDevices().then(async sourceInfos=>{
+                    console.log(sourceInfos);
+                    let videoSourceId;
+                    for (let i = 0; i < sourceInfos.length; i++) {
+                      const sourceInfo = sourceInfos[i];
+                      if(sourceInfo.kind == "videoinput" && sourceInfo.facing == ("environment")) {
+                        videoSourceId = sourceInfo.deviceId;
+                      }
+                    }
+                    const stream = await mediaDevices.getUserMedia({
+                        audio: true,
+                        video: {
+                          width: 640,
+                          height: 480,
+                          frameRate: 30,
+                          facingMode: ("environment"),
+                          deviceId: videoSourceId
+                        }
+                  })
+                  setStream(stream)
+                  console.log({stream})
+                  const track = stream.getVideoTracks()[0];
+                  const params = { track };
+                  try{
+                    const producer = await transport.produce(params);
+                  }catch(e){
+                      console.log(e)
+                  }
+                  
+                })
+
+
+            
+            }catch(e){
+                console.log(e)
+            }
+
+            
+        })
+
+          
+
+        console.log(socket,authToken)
+        
+
+    },[])
 
   return (
      
-  <MapView
-    initialRegion={{
-      latitude: 51.0447,
-      longitude:  -114.0719,
-      latitudeDelta: 0.0922,
-      longitudeDelta: 0.0421,
-    }}
-    style={{
-        height : "100%",
-        width : "100%" 
-    }}
-    onRegionChange={(region)=>{
-         
-        setShowEvents((Math.log2(360 * (Dimensions.get('screen').width / 256 / region.longitudeDelta)) + 1) > 16.9)
-           
-    }}
-  >     
-            {showEvents ? dummyData.events.map(event=><EventMarker {...event} />) : dummyData.eventNumbers.map(event=><EventNumberMarker {...event} />)}
-          
- 
-  </MapView>
+  <View style={{paddingTop : 64, display : "flex"}}>
+      <Text>Yo</Text>
+      {stream ? 
+         <Text>{stream.toURL()}</Text>
+      :null}
+      {stream ? 
+        <RTCView streamURL={stream.toURL()} style={{height : 400,width : 400,
+            backgroundColor: '#4F4'}} />
+      :null}
+  </View>
     
   );
 };
@@ -221,7 +354,20 @@ const EventNumberMarker:FC<EventNumberMarkerProps> = ({latitude,longitude,number
 }
 
 
- 
-export default connect(null, { postLogoutRequest })(Home);
+function mapStateToProps(state:any) {
+    console.log({state})
+    const { missions, userAuth } = state;
+    console.log("the props im passing to the app",{ ...missions, ...userAuth })
+    return { ...missions, ...userAuth }
+}
+export default connect(mapStateToProps, { fetchEvents })(MapScreen);
 
  
+function socketPromise(socket:Socket) {
+    return function request(type:any, data = {}) {
+      return new Promise((resolve) => {
+        socket.emit(type, data, resolve);
+      });
+    }
+  };
+  

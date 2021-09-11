@@ -15,9 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "13B07F861A680F5B00A75B9A"
-               BuildableName = "CrossPlatformMobileApp.app"
-               BlueprintName = "CrossPlatformMobileApp"
-               ReferencedContainer = "container:CrossPlatformMobileApp.xcodeproj">
+               BuildableName = "BoardgameBodycam.app"
+               BlueprintName = "BoardgameBodycam"
+               ReferencedContainer = "container:BoardgameBodycam.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -33,9 +33,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "00E356ED1AD99517003FC87E"
-               BuildableName = "CrossPlatformMobileAppTests.xctest"
-               BlueprintName = "CrossPlatformMobileAppTests"
-               ReferencedContainer = "container:CrossPlatformMobileApp.xcodeproj">
+               BuildableName = "BoardgameBodycamTests.xctest"
+               BlueprintName = "BoardgameBodycamTests"
+               ReferencedContainer = "container:BoardgameBodycam.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
@@ -55,9 +55,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "13B07F861A680F5B00A75B9A"
-            BuildableName = "CrossPlatformMobileApp.app"
-            BlueprintName = "CrossPlatformMobileApp"
-            ReferencedContainer = "container:CrossPlatformMobileApp.xcodeproj">
+            BuildableName = "BoardgameBodycam.app"
+            BlueprintName = "BoardgameBodycam"
+            ReferencedContainer = "container:BoardgameBodycam.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </LaunchAction>
@@ -72,9 +72,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "13B07F861A680F5B00A75B9A"
-            BuildableName = "CrossPlatformMobileApp.app"
-            BlueprintName = "CrossPlatformMobileApp"
-            ReferencedContainer = "container:CrossPlatformMobileApp.xcodeproj">
+            BuildableName = "BoardgameBodycam.app"
+            BlueprintName = "BoardgameBodycam"
+            ReferencedContainer = "container:BoardgameBodycam.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>

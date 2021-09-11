@@ -17,15 +17,24 @@ import { connect } from 'react-redux';
 import { COLORS, SIZES, dummyData, FONTS, icons, images } from '../constants';
 import { postLoginRequest } from '../redux/actions';
 import { LargeButton } from '../components/Buttons';
+import { FC } from 'react';
+import { RootStackParamList } from '../app/App';
+import { StackNavigationProp } from '@react-navigation/stack';
 /*
 The screen will ping the server to see if there is a connection 
 then check the authentication statuts and verify it with the server 
 */
-const LoginScreen = ({ loading, postLoginRequest }) => {
+type LoginScreenProps = {
+    navigation:StackNavigationProp<RootStackParamList>,
+    postLogoutRequest:Function,
+    loading:boolean,
+    postLoginRequest:Function
+  }
+const LoginScreen:FC<LoginScreenProps> = ({ loading, postLoginRequest }) => {
     const navigation = useNavigation()
-    //useEffect(()=>fetchHealthCheck(),[]);
     const [email, setEmail] = useState("lim@gmail.com");
     const [password, setPassword] = useState("q1w2e3r4");
+
     return (
         <View style={{ justifyContent : "center", alignItems : "center", height : "100%", width : "100%"}} >
                 <View
