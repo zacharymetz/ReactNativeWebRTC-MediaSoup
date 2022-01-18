@@ -3,205 +3,110 @@ create Schema platform;
 create table platform.user(
     id serial primary key,
     email text UNIQUE,
-	username text UNIQUE,
+	firstName text,
+    lastName text,
     hashedpassword text,
     archived boolean default false,
 	createdAt timestamp with time zone default now(),
-    lastLogin timestamp with time zone
-)
+    lastLogin timestamp with time zone default now()
+);
+
+/* file stored in system (s3 compadible storage) */
+CREATE EXTENSION IF NOT EXISTS "uuid-ossp";
+create table platform.file(
+    id uuid PRIMARY KEY DEFAULT uuid_generate_v4(),
+    "size_in_bytes" integer,
+    "bucket" text,
+    "key"  text,
+    "file_type" text,
+    "date_uploaded" timestamp with time zone default now(),
+    uploaded_by_user int REFERENCES platform.user(id)
+);
+
+/* public users profile */
 create table platform.user_profile(
     id serial primary key,
-    user_id int references ,
-    profile_image_id int,
-    header_image_id int,
-    profile_text int,
-    location text,
-    CONSTRAINT fk_user
-        FOREIGN KEY(user_id) 
-        REFERENCES platform.user(id)
+    user_id int REFERENCES platform.user(id) ,
+    username text,
+    profile_image_id uuid REFERENCES platform.file(id),
+    header_image_id uuid REFERENCES platform.file(id),
+    profile_text text,
+    location text
+);
 
-    CONSTRAINT fk_profile_image
-        FOREIGN KEY(profile_image_id) 
-        REFERENCES platform.file(id)
-)
 
-/* this is where all the files are stored and urls to them  */
+/* onboarding tables (if the user has been onboardered maybe) ? */
 
-create table platform.social_media_platform(
-    id serial primary key,
-    name text,
-    icon_name text,
-    image_id int,
-    CONSTRAINT fk_image
-        FOREIGN KEY(image_id) 
-        REFERENCES platform.file(id)
-)
 
-create table platform.file(
-    id serial primary key,
-
-    file_url text,
-    mime_type text,
-    size_in_bytes int,
-    name text,
-    created_at timestamp with time zone,
-    /* fact libary dir id is optional */
-    fact_library_directory_id int
-    CONSTRAINT fk_user
-        FOREIGN KEY(parent_id) 
-        REFERENCES platform.fact_library_directory(id)
-)
-
+/* badges */
 create table platform.badge(
-    id serial primary key,
-    name text,
+    id  serial primary key,
+    title text,
     description text,
-    image_id int,
-    conditons jsonb,
-    CONSTRAINT fk_image
-        FOREIGN KEY(image_id) 
-        REFERENCES platform.file(id)
+    image uuid REFERENCES platform.file(id) default null
+);
 
-)
-
-create table platform.user_badge_ownership(
+create table platform.user_badge_record(
     id serial primary key,
-    user_id int,
-    badge_id int,
-)
+    user_id int REFERENCES platform.user(id),
+    badge_id int REFERENCES platform.badge(id),
+    dateCreated timestamp with time zone default now()
+);
 
 
-
-/* mission related tables  */
-create table platform.mission_tag(
-    id serial primary key,
-    label text,
-)
-
+/* missions */
 create table platform.mission(
+  id serial primary key,
+  title text,
+  platform text,
+  image uuid REFERENCES platform.file(id) default null,
+  description text,
+  actionUrl text,
+  dateCreated timestamp with time zone default now(),
+  dateExpirtes timestamp with time zone default now()
+);
+
+create table platform.mission_how_to_step(
+    id  serial primary key,
+    mission_id int REFERENCES platform.mission(id),
+    image uuid REFERENCES platform.file(id) default null,
+    description text
+);
+
+create table platform.mission_reward(
+    id  serial primary key,
+    mission_id int REFERENCES platform.mission(id),
+    isBadge boolean default null,
+    badgeID int REFERENCES platform.badge(id) default null,
+    pointValue int default null
+);
+
+create table platform.mission_action_url_consumed_record(
     id serial primary key,
-    title text,
-    social_media_platform int,
-    description text ,
-    image_id int,
-    expires timestamp with time zone,
-    point_value int
-    action_url text,
-    created_at timestamp with time zone,
+    mission_id int REFERENCES platform.mission(id),
+    user_id int REFERENCES platform.user(id),
+    date_completed timestamp with time zone default now()
+);
 
-    CONSTRAINT fk_image
-        FOREIGN KEY(image_id) 
-        REFERENCES platform.file(id)
-
-)
-create table platform.mission_tag_mapping(
+create table platform.mission_completion_record(
     id serial primary key,
-    mission_id int,
-    mission_tag_id int,
-
-    CONSTRAINT fk_mission
-        FOREIGN KEY(mission_id) 
-        REFERENCES platform.mission(id)
-
-    CONSTRAINT fk_mission_tag
-        FOREIGN KEY(mission_tag_id) 
-        REFERENCES platform.mission_tag(id)
-)
-
-create table platform.mission_step(
-    id serial primary key,
-    mission_id int,
-    title text,
-    description text,
-    image_id int
-    CONSTRAINT fk_mission
-        FOREIGN KEY(mission_id) 
-        REFERENCES platform.mission(id)
-    CONSTRAINT fk_image
-        FOREIGN KEY(image_id) 
-        REFERENCES platform.file(id)
-)
+    mission_id int REFERENCES platform.mission(id),
+    user_id int REFERENCES platform.user(id),
+    date_completed timestamp with time zone default now()
+);
 
 
-create table platform.mission_completion_log(
-    id serial primary key,
-    user_id int,
-    mission_id int,
-    completed_at timestamp with time zone,
-    completed_at_ip text,
-    CONSTRAINT fk_mission
-        FOREIGN KEY(mission_id) 
-        REFERENCES platform.mission(id)
-    CONSTRAINT fk_user
-        FOREIGN KEY(user_id) 
-        REFERENCES platform.user(id)
-        
-)
+/* fact libaray related tables */
 
-create table platform.challenges(
-    id serial primary key,
-    title text,
-    description text,
-    image_id int,
-    expires timestamp with time zone,
-    reward_is_badge boolean,
-    badge_id int,
-    points_value int,
-    conditons jsonb, /* basically what you need to achive to get it  */
-)
-create table platform.challenge_completion(
-    id serial primary key,
-    user_id int,
-    challenges_id int,
-    completed_at timestamp with time zone,
-    completed_at_ip text,
-    CONSTRAINT fk_mission
-        FOREIGN KEY(challenges_id) 
-        REFERENCES platform.challenges(id)
-    CONSTRAINT fk_user
-        FOREIGN KEY(user_id) 
-        REFERENCES platform.user(id)
-)
-
-/* fact library tables */
-
-
-create table platform.fact_library_directory(
+/* this table is for the firectory, its self referential 
+where null parent id is the thing */
+create table platform.fact_library_entry(
     id serial primary key,
     name text,
-    parent_id int
-    CONSTRAINT fk_user
-        FOREIGN KEY(parent_id) 
-        REFERENCES platform.fact_library_directory(id)
-)
-
-
-/* community twitter clone down here still decieding if should do lol  */
-create table platform.micro_blog_post(
-    id serial primary key,
-    blog_content text,
-    user_id int,
-    posted_from_device text,
-    posted_from_location text,
-    posted_at timestamp with time zone
-)
-
-create table platform.micro_blog_post_attachments(
-    id serial primary key,
-    micro_blog_post_id int,
-    media_id int,
-    created_at timestamp with time zone
-)
-
-create table platform.micro_blog_post_user_likes(
-    id serial primary key,
-    micro_blog_post_id int,
-    user_id int,
-    liked_at timestamp with time zone
-)
-
-create table platform.micro_blog_post_hash_tag(
-    id serial primary key,
-    micro_blog_post_id int,
-    hashtag_name text
-)
+    type text,
+    thumbnail uuid REFERENCES platform.file(id) default null,
+    file uuid  REFERENCES platform.file(id) default null,
+    parent_id int REFERENCES platform.fact_library_entry(id),
+    date_created timestamp with time zone default now(),
+    archived boolean default false
+);

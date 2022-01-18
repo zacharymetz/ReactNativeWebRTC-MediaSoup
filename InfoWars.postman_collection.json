@@ -1,0 +1,18 @@
+{
+	"info": {
+		"_postman_id": "0d603768-54e9-4e93-b0d6-2ace796c1b60",
+		"name": "InfoWars",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Get missions",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": null
+			},
+			"response": []
+		}
+	]
+}

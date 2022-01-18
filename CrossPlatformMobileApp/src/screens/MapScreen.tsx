@@ -57,8 +57,7 @@ const MapScreen: FC<MapScreenScreenProps> = ({ navigation,fetchEvents, events,au
           });
         // this is a helper to make my life easier 
         socket.request = socketPromise(socket);
-        
-        let producer;
+
         socket.request('getRouterRtpCapabilities').then(async (routerRtpCapabilities:RtpCapabilities)=>{
             try{
                 let device:Device = new Device();
@@ -141,8 +140,8 @@ const MapScreen: FC<MapScreenScreenProps> = ({ navigation,fetchEvents, events,au
                     const stream = await mediaDevices.getUserMedia({
                         audio: true,
                         video: {
-                          width: 640,
-                          height: 480,
+                          width:  1080,
+                          height: 1920,
                           frameRate: 30,
                           facingMode: ("environment"),
                           deviceId: videoSourceId
